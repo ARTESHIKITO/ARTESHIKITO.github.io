@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <Link href="diseñito.css">
+    <title>Arrastra la imagen</title>
+    <style>
+        body {
+            position: relative;
+            background-color: #ffc0cb;
+            text-decoration-color: black;
+        }
+
+        #dragImage {
+            position: absolute;
+            width: 50%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <img src="Happy.jpeg" alt="Imagen para arrastrar" id="dragImage">
+    
+    <script>
+        const image = document.getElementById("dragImage");
+        let isDragging = false;
+        let offsetX, offsetY;
+
+        image.addEventListener("mousedown", (e) => {
+            isDragging = true;
+            offsetX = e.clientX - image.getBoundingClientRect().left;
+            offsetY = e.clientY - image.getBoundingClientRect().top;
+        });
+
+        document.addEventListener("mousemove", (e) => {
+            if (isDragging) {
+                const x = e.clientX - offsetX;
+                const y = e.clientY - offsetY;
+                image.style.left = `${x}px`;
+                image.style.top = `${y}px`;
+            }
+        });
+
+        image.addEventListener("mouseup", () => {
+            isDragging = false;
+        });
+    </script>
+<p style="text-align: right; size: 14;">Te recomiendo arrastrar la imagen aca</p>
+<p>Hola, espero te guste evidentemente no es lo mejor de lo mejor pero lo hice con mucho amor </p> 
+<p>Agradezco haber podido coincidir contigo y quiero que sepas que eres importante para mi</p>
+<p>Te ganaste mi corazon en tan poco tiempo, en verdad te amo tanto</p>
+<p>Gracias por enseñarme tanto y compartirme tus alegrias te quiero mucho jessica</p>
+<p>La vida nos cruzó</p>
+<p>De un modo muy casual</p>
+<p>Llegaste como el sol</p>
+<p>Robándome la sombra de forma gradual</p>
+<p>Cualquier fuga de luz</p>
+<p>Sirvió como señal</p>
+<p>Diez pasos hacia ti</p>
+<p>1000 dudas sobre mí</p>
+<p>Y el miedo natural</p>
+<p>Me hacías temblar así (me hacías temblar así)</p>
+<p>Como la luna sobre el agua</p>
+<p>Y entonces me solté (y entonces me solté)</p>
+<p>Para abrazarme a tu mirada</p>
+<p>Y así te descubrí (y así te descubrí)</p>
+<p>Pero en un beso fue que yo te conocí.</p>
+
+</body>
+</html>
+
